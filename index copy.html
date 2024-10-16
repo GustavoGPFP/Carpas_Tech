@@ -47,6 +47,9 @@ button:hover
 .caixa{
     display: block;
 }
+.error{
+    color: red;
+}
     </style>
     
 </head>
@@ -68,6 +71,8 @@ button:hover
             <br>
             <br>
             <button type="submit" id="submitBtn" disabled>Enviar</button>
+            <span id="emailError" class="error"></span>
+            <span id="senhaError" class="error"></span>
         </form> 
         <script src="js/testeValidacaoUsuario.js"></script>
     </div>

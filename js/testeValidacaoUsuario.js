@@ -3,7 +3,9 @@ const emailInput = document.getElementById('email');
 const submitBtn = document.getElementById('submitBtn');
 const recuperarBtn = document.getElementById('recuperarBtn');
 const senhaInput = document.getElementById('senha'); // Adiciona a referência ao campo de senha
-
+// Mensagem error
+const emailError = document.getElementById('emailError');
+const senhaError = document.getElementById('senhaError');
 // Função para validar o e-mail
 function validateEmail() {
     const emailValue = emailInput.value;
@@ -14,6 +16,7 @@ function validateEmail() {
         recuperarBtn.disabled = false;
     } else {
         recuperarBtn.disabled = true;
+        emailError.textContent = "Email inválido!";
     }
 }
 
@@ -26,6 +29,7 @@ function validarSenha() {
     if (senhaValue.length < 8) {
     //    senhaError.textContent = "A senha deve ter no mínimo 8 caracteres.";
         submitBtn.disabled = true; // Desabilita o botão
+        senhaError.textContent = "Senha deve ter no minímo 8 caracters!";
     } else {
       //  senhaError.textContent = ""; // Limpa a mensagem de erro
         submitBtn.disabled = false; // Habilita o botão
