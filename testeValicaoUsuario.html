@@ -10,17 +10,49 @@
 <form method="post">
     <label>E-mail</label>
     <br>
-    <input type="email" name="email" id="email" size="51" maxlength="40" placeholder="email@servidor.com" required>
+    <input type="email" name="email" id="email" size="51" maxlength="40" placeholder="email@servidor.com" onchange="validateFields" required>
     <br>
     
     <label>Senha</label>
     <br>
-    <input type="password" name="senha" id="senha" size="51" maxlength="40" placeholder="senha" required></input>
+    <input type="password" name="senha" id="password" size="51" maxlength="40" placeholder="senha" onchange="validateFields" required></input>
     <br>
-    <button>Enviar</button>
+    <button type="button" id="recover-password-button" disabled="true">Recuperar Senha</button>
+    <br>
+    <button type="button" id="login-button" disabled="true">Enviar</button>
 </form>
 
 <script type="text/javascript" src="js/testeValidacaoUsuario.js"></script>
+
+<script>
+function validateFields() {
+    const emailValid = isEmailValid();
+    document.getElementById("recover-password-button").disabled = !emailValid;
+    const passwordValid = isPasswordValid();
+    document.getElementById("login-button").disabled = !emailValid || !passwordValid;
+    }
+
+function isEmailValid() {
+    const email = document.getElementById("email").value;
+    if (!email) {
+        return false;
+    }
+    return validateEmail(email);
+}
+
+function isPasswordValid() {
+    const password = document.getElementById("password").value;
+    if (!password) {
+        return false;
+    }
+    return true;
+}
+
+function validateEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+
+</script>
 
 </body>
 </html>
