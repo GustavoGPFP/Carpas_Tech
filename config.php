@@ -8,11 +8,12 @@ $dbname = "ctprj";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verifica a conexão
-if ($conn->connect_error) {
+/* if ($conn->connect_error) {
     echo("Conexão falhou: " . $conn->connect_error);
 }
 else{
     echo "Conectado com sucesso";
 }
+    */
 
 ?>
