@@ -1,26 +1,37 @@
-function validateFields() {
-    const emailValid = isEmailValid();
-    document.getElementById("recover-password-button").disabled = !emailValid;
-    const passwordValid = isPasswordValid();
-    document.getElementById("login-button").disabled = !emailValid || !passwordValid;
-    }
+// Seleciona o campo de e-mail e o botão de envio
+const emailInput = document.getElementById('email');
+const submitBtn = document.getElementById('submitBtn');
+const recuperarBtn = document.getElementById('recuperarBtn');
+const senhaInput = document.getElementById('senha'); // Adiciona a referência ao campo de senha
 
-function isEmailValid() {
-    const email = document.getElementById("email").value;
-    if (!email) {
-        return false;
+// Função para validar o e-mail
+function validateEmail() {
+    const emailValue = emailInput.value;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    // Habilita o botão de recuperação se o e-mail for válido
+    if (emailPattern.test(emailValue)) {
+        recuperarBtn.disabled = false;
+    } else {
+        recuperarBtn.disabled = true;
     }
-    return validateEmail(email);
 }
 
-function isPasswordValid() {
-    const password = document.getElementById("password").value;
-    if (!password) {
-        return false;
+// Função para validar a senha
+function validarSenha() {
+    const senhaValue = senhaInput.value;
+   // const senhaError = document.getElementById('senhaError');
+
+    // Condições para a senha ser válida
+    if (senhaValue.length < 8) {
+    //    senhaError.textContent = "A senha deve ter no mínimo 8 caracteres.";
+        submitBtn.disabled = true; // Desabilita o botão
+    } else {
+      //  senhaError.textContent = ""; // Limpa a mensagem de erro
+        submitBtn.disabled = false; // Habilita o botão
     }
-    return true;
 }
 
-function validateEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-}
+// Adiciona eventos 'input' aos campos de e-mail e senha para validação
+emailInput.addEventListener('input', validateEmail);
+senhaInput.addEventListener('input', validarSenha); // Agora senhaInput está corretamente referenciado
