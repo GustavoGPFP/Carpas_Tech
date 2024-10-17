@@ -1,0 +1,134 @@
+
+/* PÁGINA DE LOGIN-CADASTRO */
+
+header img {
+    width: 3%;
+    height: auto;
+} 
+
+.tela-login {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 300px;
+    margin-left: -120%;
+    margin-top: 100px; 
+    text-align: center;
+}
+
+.tela-login input {
+    width: calc(100% - 20px); /* Ajusta a largura para considerar padding e border */
+    padding: 10px;
+    margin: 10px 0; /* Mantém apenas margens em cima e embaixo */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block; /* Garante que o input seja um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+button {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #066ece;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5eb3f0;
+}
+
+.imglogin{
+    width: 40%;
+    height: auto;
+    margin-left: 40px;
+    margin-right: auto;
+}
+
+.uni-img-login {
+    display: flex; 
+    align-items: center;
+    
+}
+.error{
+    color: red;
+    display: block;
+}
+
+
+.rodape{
+    background-color: #191B40; 
+    color: rgb(255, 255, 255); 
+    padding: 20px; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0; 
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.rodape .logo {
+    font-size: 300%;
+}
+
+address {
+    text-align: center;
+    color: #ffffff;
+}
+.rodape .verificacao {
+    font-size: 12px; 
+    color: white ;
+}
+.container-logos {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 20px;
+    padding: 20px; 
+}
+
+.redes-sociais {
+    max-width: 50px; 
+    height: auto; 
+}
+
+.container-tipo-template {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    align-content: center;
+    justify-content: center; 
+    align-content: center; 
+
+}
+
+.tipo-doc {
+    background-color: #ffffff; 
+    border: 2px solid #007bff00;
+    border-radius: 8px; 
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.3s, box-shadow 0.3s; 
+    cursor: pointer; 
+    margin-left: 50px ;
+
+}
+
+.tipo-doc:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 4px 20px rgb(0, 0, 0); /* Adiciona sombra ao passar o mouse */
+}
+
+.tipo-doc img {
+    width: 40%;
+    height: auto;
+}
