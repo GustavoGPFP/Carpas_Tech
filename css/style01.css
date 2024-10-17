@@ -88,7 +88,7 @@ body {
 
 .cabecalho {
     position: relative; /* Necessário para o posicionamento do pseudo-elemento */
-    background-image: url('img/inicioNegocios.jpg');
+    background-image: url("../img/inicioNegocios.jpg");
     background-size: 100%;
     background-position: center;
     color: white;
