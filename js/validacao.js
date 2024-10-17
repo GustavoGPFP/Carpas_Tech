@@ -29,7 +29,7 @@ function validarSenha() {
     if (senhaValue.length < 8) {
     //    senhaError.textContent = "A senha deve ter no mínimo 8 caracteres.";
         submitBtn.disabled = true; // Desabilita o botão
-        senhaError.textContent = "Senha deve ter no minímo 8 caracters!";
+        senhaError.textContent = "Minímo 8 caracters!";
     } else {
       //  senhaError.textContent = ""; // Limpa a mensagem de erro
         submitBtn.disabled = false; // Habilita o botão
