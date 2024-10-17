@@ -1,27 +1,3 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const sql = require('mssql');
-
-// Configurações do SQL Server
-const sqlConfig = {
-    user: 'GUSTAVO/gust',          // Seu usuário do SQL Server
-    password: '',                  // Sua senha do SQL Server
-    database: 'carpas_tech',      // Nome do banco de dados
-    server: 'localhost',           // Servidor onde está o SQL Server
-    options: {
-        trustServerCertificate: true,  // Necessário para ambientes de desenvolvimento
-    }
-};
-
-const app = express();
-const port = 3000; // ou qualquer outra porta que você preferir
-
-// Middleware para parsear dados enviados pelo formulário
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Middleware para servir arquivos estáticos da pasta 'public'
-app.use(express.static('public'));
-
 // Conexão com o banco de dados
 async function connectToSQL() {
     try {
@@ -31,6 +7,32 @@ async function connectToSQL() {
         console.error('Erro ao conectar ao SQL Server:', err);
     }
 }
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const sql = require('mssql');
+
+// Configurações do SQL Server
+const sqlConfig = {
+    user: 'GUSTAVO/gust',          // Seu usuário do SQL Server
+    password: '',                  // Sua senha do SQL Server
+    database: 'carpas_tech',      // Nome do banco de dados
+    server: 'localhost\\SQLEXPRESS',           // Servidor onde está o SQL Server
+    options: {
+        trustServerCertificate: true,  // Necessário para ambientes de desenvolvimento
+    }
+};
+
+const app = express();
+const port = 3001; // ou qualquer outra porta que você preferir
+
+// Middleware para parsear dados enviados pelo formulário
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Middleware para servir arquivos estáticos da pasta 'public'
+app.use(express.static('public'));
+
+
 
 // Rota para receber dados do formulário
 app.post('/submit', async (req, res) => {
