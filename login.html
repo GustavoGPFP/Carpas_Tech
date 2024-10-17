@@ -11,7 +11,7 @@
 <main>
     <div class="uni-img-login">
         <img src="img/imglogin.png" alt="imagem de login" class="imglogin"> 
-        <form onchange="validateForm()">
+        <form onchange="validateForm()" action="/submit" method="POST">
             <div class="tela-login">
                 <h1>Login</h1><br>
                 <input type="email" id="email" name="email" onchange="validateEmail()" placeholder="example@gmail.com">
