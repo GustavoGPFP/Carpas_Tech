@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
     <title>Login</title>
     <link  rel="stylesheet" href="css/style01.css">
     
@@ -12,12 +11,15 @@
 <main>
     <div class="uni-img-login">
         <img src="img/imglogin.png" class="imglogin"> 
-        <form>
+        <form onchange="validateForm()">
             <div class="tela-login">
-                <h1>Login</h1>
-                <input type="text" placeholder="nome" required>
-                <input type="password" placeholder="senha" required>
-                <button type="submit">ENVIAR</button>
+                <h1>Login</h1><br>
+                <input type="email" id="email" name="email" onchange="validateEmail()" placeholder="example@gmail.com">
+                <input type="password" id="senha" name="senha" onchange="validarSenha()" placeholder="senha"><br>
+                <button type="submit" id="recuperarBtn" disabled>Recuperar Senha</button><br><br>
+                <button type="submit" id="submitBtn" disabled>Enviar</button><br>
+                <span id="emailError" class="error"></span>
+                <span id="senhaError" class="error"></span>
             </div>
         </form>
     </div>
