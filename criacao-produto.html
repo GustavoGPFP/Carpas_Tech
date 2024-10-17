@@ -23,13 +23,11 @@
         <div class="overlay">
             <h2>Sua criatividade </h2>
             <h2 class="h23"> é bem-vinda:</h2>
-            <p>junte-se a nós e compartilhe seu conteúdo!</p>
+            <p>junte-se a nós e compartilhe </p>
+            <p>seu conteúdo!</p>
         </div>
 
-        <!-- <div class="imagem-cabecalho">
-            <img src="img/arquivo.jpg" alt="Imagem de um homem apontando para vários papéis espalhados em uma mesa de madeira, com um notebook ao lado.">
-        </div>
-      -->
+      
     </header>
     <main >
    
@@ -39,23 +37,24 @@
 
              <form action="/upload" method="post" enctype="multipart/form-data">
 
-                <label>Nome</label><br><br>
-                <input type="text" id="nomeisca" required><br><br>
-
+                <div class="margem">
+                    <label for="text">Nome</label> <br>
+                    <input type="text" id="nomeisca" required class="input-text">
+                </div>
+               
+                <div class="margem"> 
                 <label for="file">Escolha um arquivo:</label>
-
-                <div class="upload-box"> 
                     <input type="file" id="file" name="file" required>
                 </div>
                
-
+                <div class="margem"> 
                 <fieldset>
                     <legend>Tipo</legend>
-                    <div class="input-group">
+                    <div class="input-costumizacao">
 
                         
                         <input type="radio" name="tipo" id="educaçao" value="educaçao" required>
-                         <label for="educaçao">Educaçao</label>
+                         <label for="educaçao">Educação</label>
 
                         <input type="radio" name="tipo" id="tecnologia" value="tecnologia">
                         <label for="tecnologia">Tecnologia</label>
@@ -65,8 +64,7 @@
 
                         <input type="radio" name="tipo" id="literatura" value="literatura">
                         <label for="literatura">Literatura</label>
-                    </div>
-                    <div class="input-group">
+  
 
                         <input type="radio" name="tipo" id="cinema" value="cinema">
                         <label for="cinema">Cinema</label>
@@ -78,12 +76,14 @@
                         <label for="outro">Outro</label>
                     </div>
                 </fieldset>
+                </div>
 
-
-                <label>Descrição</label> <br> 
-
-                <textarea name="descricaoproduto" id="descricaoproduto" rows="7" cols="48" required></textarea>
-
+                <div class="margem"> 
+                    <label>Descrição</label> <br> 
+                    <textarea name="descricaoproduto" id="descricaoproduto" rows="7" cols="48" required></textarea>
+                    <br>
+                </div>
+               
                 <input type="submit" value="Criar" class="input-botao">
             </form>
         </div>
