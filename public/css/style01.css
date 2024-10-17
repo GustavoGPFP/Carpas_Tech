@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.021); /* Fundo transparente */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f2f3f7;
+}
+
+.overlay h2{
+    font-weight: 600;
+    font-size: 450%;
+
+}
+
+.overlay p {
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ffffff; /* Cor padrão do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    display: inline-block; /* Permite definir largura e altura */
+    width: 70px; /* Largura fixa */
+    height: auto; /* Altura fixa */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 25px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    line-height: 30px; /* Alinha verticalmente o texto */
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Transição suave */
+}
+
+.nav-links a:hover {
+    color: #000000; /* Cor do texto ao passar o mouse */
+    background-color: #e6e9f0be; /* Cor de fundo ao passar o mouse */
+    border: 2px solid black; /* Borda preta ao passar o mouse */
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.9);
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.cabecalho {
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    background-image: url("../img/inicioNegocios.jpg");
+    background-size: 100%;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 50vh;
+    overflow: hidden; /* Para garantir que o pseudo-elemento não ultrapasse os limites do cabeçalho */
+}
+
+.cabecalho::before {
+    content: ''; /* Necessário para criar o pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: 1; /* Coloca o pseudo-elemento atrás do texto */
+}
+
+.cabecalho h2, .cabecalho p {
+    position: relative; /* Para garantir que o texto fique acima do pseudo-elemento */
+    z-index: 2; /* Coloca o texto acima da camada escura */
+}
+
+.barra-busca {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    margin: 20px auto; /* Espaçamento acima e abaixo */
+    max-width: 1000px; /* Largura máxima da barra */
+}
+
+.icone-busca {
+    width: 40px; /* Tamanho do ícone */
+    height: 40px; /* Tamanho do ícone */
+    margin-right: 10px; /* Espaçamento entre o ícone e o campo de busca */
+    border-radius: 20px; /* Arredondamento nas bordas do ícone */
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 5px; 
+}
+
+.barra-busca input {
+    border: 2px solid rgb(2, 2, 2); 
+    border-radius: 25px; 
+    padding: 10px 20px; 
+    flex: 1; 
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.rodape{
+    background-color: #000000c2; 
+    color: rgb(255, 255, 255); 
+    padding: 20px; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0; 
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.rodape .logo {
+    font-size: 300%;
+}
+
+address {
+    text-align: center;
+    color: #ffffff;
+}
+.rodape .verificacao {
+    font-size: 12px; 
+    color: white ;
+}
+.container-logos {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 20px;
+    padding: 20px; 
+}
+
+.redes-sociais {
+    max-width: 50px; 
+    height: auto; 
+}
+
+.container-tipo-template {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    align-content: center;
+    justify-content: center; 
+    align-content: center; 
+
+}
+
+.tipo-doc {
+    background-color: #ffffff; 
+    border: 2px solid #007bff00;
+    border-radius: 8px; 
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.3s, box-shadow 0.3s; 
+    cursor: pointer; 
+    margin-left: 50px ;
+
+}
+
+.tipo-doc:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 4px 20px rgb(0, 0, 0); /* Adiciona sombra ao passar o mouse */
+}
+
+.tipo-doc img {
+    width: 40%;
+    height: auto;
+}
+
+/* PÁGINA DE LOGIN */
+
+.tela-login {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 300px;
+    margin-left: -120%;
+    margin-top: 100px; 
+    text-align: center;
+}
+
+.tela-login input {
+    width: calc(100% - 20px); /* Ajusta a largura para considerar padding e border */
+    padding: 10px;
+    margin: 10px 0; /* Mantém apenas margens em cima e embaixo */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block; /* Garante que o input seja um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+button {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #066ece;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5eb3f0;
+}
+
+.imglogin{
+    width: 40%;
+    height: auto;
+    margin-left: 40px;
+    margin-right: auto;
+}
+
+.uni-img-login {
+    display: flex; 
+    align-items: center;
+    
+}
+.error{
+    color: red;
+    display: block;
+}
