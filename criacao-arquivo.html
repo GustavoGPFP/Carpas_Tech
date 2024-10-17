@@ -6,8 +6,22 @@
     <title>Usuário</title>
 </head>
 <body>
-    <h1>Interface Usuário</h1><br><br>
-    <a href="index.html"><img src="img/logo.png" alt="logo da plataforma clicável que leva para inicio da pagina"></a>
+
+    <header class="cabecalho-usuario"> 
+        <nav class="nav-user">
+            <div class="logo"> CarpasTech</div> 
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html" target="blank">Sobre</a></li>
+                <li><a href="login-cadastro.html" target="blank">Login</a></li>
+                <li><a href="usuario.html" target="blank">Usuário</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <h1>Interface Usuário</h1><br><br>
+   <!-- <a href="index.html"><img src="img/logo.png" alt="logo da plataforma clicável que leva para inicio da pagina"></a> -->
     <h2>Configurações de Iscas Digitais</h2><br>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <label for="file">Escolha um arquivo:</label>
@@ -42,6 +56,12 @@
         <br><br>
         <input type="submit" value="Criar">
     </form>
+
+    </main>
+    <footer>
+
+    </footer>
+    
     <script src="js/backend.js"></script>
 </body>
 </html>
