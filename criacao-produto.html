@@ -18,7 +18,13 @@
                 <li><a href="usuario.html" target="blank">Usuário</a></li>
             </ul>
         </nav>
-        <h1> Sua criatividade é bem-vinda: junte-se a nós e compartilhe seu conteúdo!</h1>
+        <img src="img/arquivo.jpg" alt="Imagem de um homem apontando para vários papéis espalhados em uma mesa de madeira, com um notebook ao lado." >
+        
+        <div class="overlay">
+            <h2>Sua criatividade </h2>
+            <h2 class="h23"> é bem-vinda:</h2>
+            <p>junte-se a nós e compartilhe seu conteúdo!</p>
+        </div>
 
         <!-- <div class="imagem-cabecalho">
             <img src="img/arquivo.jpg" alt="Imagem de um homem apontando para vários papéis espalhados em uma mesa de madeira, com um notebook ao lado.">
@@ -45,7 +51,9 @@
 
                 <fieldset>
                     <legend>Tipo</legend>
-                    <div class="organizar-fieldset">
+                    <div class="input-group">
+
+                        
                         <input type="radio" name="tipo" id="educaçao" value="educaçao" required>
                          <label for="educaçao">Educaçao</label>
 
@@ -58,23 +66,25 @@
                         <input type="radio" name="tipo" id="literatura" value="literatura">
                         <label for="literatura">Literatura</label>
                     </div>
-                    
-                    <input type="radio" name="tipo" id="cinema" value="cinema">
-                    <label for="cinema">Cinema</label>
+                    <div class="input-group">
 
-                    <input type="radio" name="tipo" id="lazer" value="lazer">
-                    <label for="lazer">Lazer</label>
+                        <input type="radio" name="tipo" id="cinema" value="cinema">
+                        <label for="cinema">Cinema</label>
 
-                    <input type="radio" name="tipo" id="outro" value="outro">
-                    <label for="outro">Outro</label>
+                        <input type="radio" name="tipo" id="lazer" value="lazer">
+                        <label for="lazer">Lazer</label>
+
+                        <input type="radio" name="tipo" id="outro" value="outro">
+                        <label for="outro">Outro</label>
+                    </div>
                 </fieldset>
 
 
-                <label>Descrição</label>
+                <label>Descrição</label> <br> 
 
                 <textarea name="descricaoproduto" id="descricaoproduto" rows="7" cols="48" required></textarea>
 
-                <input type="submit" value="Criar">
+                <input type="submit" value="Criar" class="input-botao">
             </form>
         </div>
 

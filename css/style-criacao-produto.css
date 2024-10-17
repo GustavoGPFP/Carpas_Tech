@@ -5,6 +5,49 @@ body {
       
 }
 
+.overlay p {
+   
+    margin-top: -36px;
+    font-size: 200%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fdfcf5;
+}
+
+.overlay h2{
+    font-weight: 600px;
+    margin-top: 40px;
+    font-size: 300%;
+    color: #42413d;
+
+}
+
+.overlay {
+
+    margin-left: 100px;
+}
+
+.overlay .h23 {
+    margin-top: -30px;
+}
+
+.cabecalho-usuario {
+    background-color: #b5bcc4;
+    height: 600px; /* Altura do cabeçalho */
+    position: relative; /* Para posicionar a imagem dentro */
+    overflow: hidden; /* Esconde a parte da imagem que sai do cabeçalho */
+}
+
+.cabecalho-usuario img {
+ 
+    position: absolute;
+    bottom: 0px; /* Posiciona a imagem na parte inferior */
+    left: 90%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a centralização */
+    opacity: 0.7; 
+    width: 100%;
+    height: auto;
+   
+}
 /* header .imagem-cabecalho{
     padding: 0;
     height: 100vh;  
@@ -35,7 +78,7 @@ body {
 .logo {
     font-size: 30px;
     font-weight: bold;
-    color: #0c36db;
+    color: #42413d;
     
 }
 
@@ -58,6 +101,12 @@ body {
 
 .nav-links li {
     display: inline;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .nav-links a {
@@ -109,34 +158,36 @@ body {
     margin-top: 5%;
     margin-left: 40%;
     margin-right: 30%;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     max-width: 100%;
 }
 
 
-.upload-box {
-    border: 2px dashed #007BFF; /* Borda pontilhada */
-    padding: 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    margin-top: 20px; /* Espaço acima do quadrado */
-    cursor: pointer; /* Muda o cursor ao passar sobre o quadrado */
-    background-color: #f9f9f9; /* Cor de fundo */
-}
-
 fieldset {
     border: #ffffff00;
 
 }
 
+.organizar-fieldset {
+    font-weight:lighter;
+    
+}
+
 fieldset , legend {
     margin-left: -5px;
     margin-top: 2%;
+    font-weight: bold;
 }
 
 label {
     margin-bottom: 300%;
+    font-weight: bold;
+    
 }
+
+
 
 
 .rodape{
