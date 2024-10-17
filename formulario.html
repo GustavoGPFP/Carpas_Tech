@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+<style>
+       body
+    {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(45deg, pink, blue);
+    }
+    .box
+    {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 15px;
+    color: aliceblue;
+    }
+    .box1{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 15px;
+    color: aliceblue;
+    }
+    input
+    {
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;   
+    }
+    button
+    {
+    background-color: aquamarine;
+    border: none;
+    padding: 15px; /*distancia elemensto e borda */
+    width: 100%; /*dlargura */
+    border-radius: 10px;
+    color: purple;
+    font-size: 15px;
+    cursor: pointer;
+    }
+    button:hover
+{
+    background-color: antiquewhite;
+}
+.caixa{
+    display: block;
+}
+.hidden
+{
+    display: none; /* Oculta a div */
+}
+.visible
+{
+    display: block; /* Mostra a div */
+}
+</style>
+<script>
+   function mostrarDados() {
+            // Captura os valores do formulário
+            var email = document.getElementById('email').value;
+            var nome = document.getElementById('nome').value;
+            
+            // Cria o conteúdo HTML para exibir na página
+            var dadosHtml = `
+                <h1>Dados do Formulário</h1>
+                <p><strong>Nome:</strong> ${nome}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <a href="index.html"><img src="img/logo.png" alt="logo da plataforma clicável que leva para inicio da pagina"></a>
+            `;
+
+            // Insere o conteúdo na div de resultado
+            document.getElementById('resultado').innerHTML = dadosHtml;
+        }
+</script>
+</head>
+<body >
+    
+    <!-- <a href="../index.html"><img src="../img/logo.png" alt="Logo voltar menu"></a> -->
+    <div class="box">
+        <form onsubmit="event.preventDefault(); mostrarDados();">
+                <fieldset>
+                <legend><b>FORMULÁRIO CLIENTES</b></legend>
+                <br>
+                <div class="inputBox">
+                    <label class="caixa">E-mail</label><br>
+                    <input type="email" name="email" id="email" class="inputUser" placeholder="email" required>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label class="caixa">Nome</label><br>
+                    <input type="text" name="nome" id="nome" class="inputUser" placeholder="nome completo" required>
+                </div>
+                <br><br>
+                <button type="submit" name="submit" id="submit">ENVIAR</button>
+            </fieldset>
+        </form>
+    </div>
+    <div id="resultado"></div>
+</body>
+</html>
