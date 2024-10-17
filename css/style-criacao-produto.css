@@ -106,10 +106,38 @@ body {
 }
 
 .container-form {
-    display: contents;
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-right: 30%;
+    display: flex;
     flex-direction: column;
     max-width: 100%;
 }
+
+
+.upload-box {
+    border: 2px dashed #007BFF; /* Borda pontilhada */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaço acima do quadrado */
+    cursor: pointer; /* Muda o cursor ao passar sobre o quadrado */
+    background-color: #f9f9f9; /* Cor de fundo */
+}
+
+fieldset {
+    border: #ffffff00;
+
+}
+
+fieldset , legend {
+    margin-left: -5px;
+    margin-top: 2%;
+}
+
+label {
+    margin-bottom: 300%;
+}
+
 
 .rodape{
     background-color: #191B40; 
