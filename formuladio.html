@@ -14,7 +14,7 @@
     {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
@@ -43,7 +43,9 @@
 {
     background-color: antiquewhite;
 }
-
+.caixa{
+    display: block;
+}
 </style>
    
 </head>
@@ -55,43 +57,13 @@
                 <legend><b>FORMULÁRIO CLIENTES</b></legend>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" placeholder="nome completo" required>
-                </div>
-                <br><br>
-                <div class="inputBox">
+                    <label class="caixa">E-mail</label><br>
                     <input type="email" name="email" id="email" class="inputUser" placeholder="email" required>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" placeholder="telefone" required>
-                </div>
-                <br><br>
-                <p>Sexo:</p>
-                <input type="radio" id="feminino" name="genero" value="feminino" required>
-                <label for="feminino">Feminino</label>
-                <br>
-                <input type="radio" id="masculino" name="genero" value="masculino" required>
-                <label for="masculino">Masculino</label>
-                <br>
-                <input type="radio" id="outro" name="genero" value="outro" required>
-                <label for="outro">Outro</label>
-                <br>
-                <br>
-                <div class="inputBox">
-                    <label for="data_nascimento"><b>Data Nascimento:</b></label>
-                    <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" placeholder="cidade" required>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" placeholder="Estado" required>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" placeholder="Endereço" required>
+                    <label class="caixa">Nome</label><br>
+                    <input type="text" name="nome" id="nome" class="inputUser" placeholder="nome completo" required>
                 </div>
                 <br><br>
                 <button type="submit" name="submit" id="submit">ENVIAR</button>
