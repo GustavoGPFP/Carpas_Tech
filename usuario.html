@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuário</title>
+</head>
+<body>
+    <h1>Interface Usuário</h1><br><br>
+    <a href="index.html"><img src="img/logo.png" alt="logo da plataforma clicável que leva para inicio da pagina"></a>
+    <h2>Configurações de Iscas Digitais</h2><br>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Escolha um arquivo:</label>
+        <input type="file" id="file" name="file" required><br><br>
+        <label>Nome</label><br><br>
+        <input type="text" id="nomeisca" nome="nomeisca" required><br><br>
+        <fieldset>
+            <legend>Tipo</legend>
+            <input type="radio" name="tipo" id="educaçao" value="educaçao" required>
+            <label for="educaçao">Educaçao</label>
+
+            <input type="radio" name="tipo" id="tecnologia" value="tecnologia">
+            <label for="tecnologia">Tecnologia</label>
+
+            <input type="radio" name="tipo" id="esporte" value="esporte">
+            <label for="esporte">Esporte</label>
+
+            <input type="radio" name="tipo" id="literatura" value="literatura">
+            <label for="literatura">Literatura</label>
+
+            <input type="radio" name="tipo" id="cinema" value="cinema">
+            <label for="cinema">Cinema</label>
+
+            <input type="radio" name="tipo" id="lazer" value="lazer">
+            <label for="lazer">Lazer</label>
+
+            <input type="radio" name="tipo" id="outro" value="outro">
+            <label for="outro">Outro</label>
+        </fieldset><br><br>
+        <label>Descrição</label><br><br>
+        <textarea name="descricaoproduto" id="descricaoproduto" rows="7" cols="48" required></textarea>
+        <br><br>
+        <input type="submit" value="Criar">
+    </form>
+    <script src="js/backend.js"></script>
+</body>
+</html>
