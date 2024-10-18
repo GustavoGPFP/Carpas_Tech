@@ -88,3 +88,15 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", validateForm);
 });
 
+function verificarCampos() {
+    const gmail = document.getElementById('gmail').value;
+    const senha = document.getElementById('senha').value;
+    const botao = document.getElementById('submitBtn');
+
+    // Habilita ou desabilita o botão com base no preenchimento dos campos
+    if (gmail && senha) {
+        botao.disabled = false;
+    } else {
+        botao.disabled = true;
+    }
+}
