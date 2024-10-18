@@ -8,7 +8,7 @@
     <link rel="icon" href="img/carpas-icon.png" type="image/x-icon">
     <link  rel="stylesheet" href="css/style-usuario.css">
 </head>
-<body>
+<body >
     <header class="cabecalho-catalogo"> 
         <nav class="nav-user">
             <div class="logo"> CarpasTech</div> 
@@ -20,35 +20,42 @@
         </nav>
     </header>
     <main> 
+        <!-- <img src="img/colaboradores.jpg" alt="imagem de fundo, duas pessoas mexendo no celular" class="img-back">  -->
 
-        <div class="container">
+
+        <div class="container-edit-user">
 
             <form id="profileForm">
-                <div class="form-group">
+                <div class="form-user">
                     <label for="photo">Foto de Perfil:</label>
-                    <input type="file" id="photo" accept="image/*" onchange="previewImage(event)">
-                    <img id="photoPreview" src="#" alt="Prévia da Foto" class="photo-preview" />
+                    <input type="file" id="photo"  accept="image/*" onchange="previewImage(event)">
+                    <img id="photoPreview" src="img/img-usuario.png" alt="Prévia da Foto" class="photo-preview" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-user">
                     <label for="username">Nome de Usuário:</label>
                     <input type="text" id="username" value="" readonly>
                 </div>
 
-                <div class="form-group">
+                <div class="form-user">
                     <label for="name">Nome:</label>
                     <input type="text" id="name" placeholder="Digite seu nome" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-user">
                     <label for="bio">Descrição:</label>
-                    <textarea id="bio" rows="4" placeholder="Digite sua descrição" required></textarea>
+                    <textarea id="bio" rows="4" placeholder="Trabalho com..." required></textarea>
                 </div>
                 <button type="submit">Salvar</button>
             </form>
 
             <script src="js/script-user.js"></script>
         </main>
+
+
+
+
+
         <footer class="rodape">
             <div class="logo"> CarpasTech</div> 
             <div class="container-logos">
