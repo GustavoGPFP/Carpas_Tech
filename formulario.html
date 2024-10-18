@@ -5,24 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
 
-<script>
-   function mostrarDados() {
-            // Captura os valores do formulário
-            var email = document.getElementById('email').value;
-            var nome = document.getElementById('nome').value;
-            
-            // Cria o conteúdo HTML para exibir na página
-            var dadosHtml = `
-                <h1>Dados do Formulário</h1>
-                <p><strong>Nome:</strong> ${nome}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <a href="index.html"><img src="img/logo.png" alt="logo da plataforma clicável que leva para inicio da pagina"></a>
-            `;
 
-            // Insere o conteúdo na div de resultado
-            document.getElementById('resultado').innerHTML = dadosHtml;
-        }
-</script>
 </head>
 <body >
   
@@ -37,16 +20,14 @@
     </header>
    
     <div class="tela-login-form">
-        <form id="downloadForm" action="catalogo-produto.html" method="GET">
-                <fieldset>
-                <legend>Por favor, digite seus dados para ter acesso ao conteúdo completo. </legend>
-                    <input type="email" name="email" id="email" class="inputUser" placeholder="email@gmail.com" required>
-                    <input type="text" name="nome" id="nome" class="inputUser" placeholder="nome completo" required>
-                
-
-                <button type="submit" name="submit" id="submit">ENVIAR</button>
-            </fieldset>
+        <form id="formulario" onsubmit="handleSubmit(event)">
+            <legend>Por favor, digite seus dados para ter acesso ao conteúdo completo. </legend>
+            <input type="email" name="email" id="email" class="inputUser" placeholder="email@gmail.com" required> 
+            <input type="text" name="nome" id="nome" class="inputUser" placeholder="nome completo" required>
+        
+            <button id="enviar" disabled>ENVIAR</button>
         </form>
+        
     </div>
 
     <div id="resultado"></div>
@@ -66,9 +47,51 @@
 
     </footer>
     <script>
-    document.getElementById('downloadForm').onsubmit = function() {
-        // Você pode adicionar qualquer lógica aqui, se necessário
-    };
-    </script>
+     // Seleciona os elementos
+     const email = document.getElementById('email');
+     const nome = document.getElementById('nome');
+     const enviar = document.getElementById('enviar');
+     
+     // Função que verifica se os campos estão preenchidos
+     function verificarCampos() {
+         if (email.value.trim() !== "" && nome.value.trim() !== "") {
+             enviar.disabled = false; // Habilita o botão
+         } else {
+             enviar.disabled = true;  // Desabilita o botão
+         }
+     }
+     
+     // Adiciona os eventos para verificar os campos enquanto o usuário digita
+     email.addEventListener('input', verificarCampos);
+     nome.addEventListener('input', verificarCampos);
+     
+     // Função para lidar com a submissão do formulário
+     function handleSubmit(event) {
+         event.preventDefault(); // Impede o comportamento padrão do formulário
+     
+         // Verifica se os campos estão preenchidos
+         if (email.value.trim() === "" || nome.value.trim() === "") {
+             alert('Por favor, preencha todos os campos.');
+             return false; // Retorna false para evitar o envio do formulário
+         }
+     
+         // Se os campos estiverem preenchidos, permite o download
+         const link = document.createElement('a');
+         link.href = 'teste.pdf'; // Caminho do arquivo para download
+         link.download = 'teste.pdf'; // Nome do arquivo para download
+     
+         // Adiciona o link ao DOM
+         document.body.appendChild(link);
+         link.click(); // Simula o clique para iniciar o download
+         document.body.removeChild(link); // Remove o link do DOM
+     
+         // Opcional: Limpa os campos após o download
+         email.value = '';
+         nome.value = '';
+         verificarCampos(); // Atualiza o estado do botão
+     
+         return true; // Retorna true se a ação foi bem-sucedida
+     }
+     </script>
 </body>
 </html>

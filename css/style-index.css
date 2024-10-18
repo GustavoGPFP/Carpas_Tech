@@ -291,3 +291,11 @@ button:hover {
 .sugestoes div:hover {
     background-color: #ddd;
 }
+.formataLink{
+    background: none; /* Remove o fundo */
+    color: inherit; /* Herda a cor do texto pai */
+    text-decoration: none; /* Remove o sublinhado */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Muda o cursor para pointer */
+    padding: 0; /* Remove o padding padrão */
+}
