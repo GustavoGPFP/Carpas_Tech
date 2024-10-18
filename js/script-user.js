@@ -1,47 +1,73 @@
-// script.js
-
-// Função para gerar um nome de usuário aleatório
-function generateUsername() {
-    const usernames = ['user123', 'johndoe', 'janedoe', 'anonymous', 'guest'];
-    return usernames[Math.floor(Math.random() * usernames.length)];
-}
-
-// Ao carregar a página, definir o nome de usuário
+// Função para carregar os dados do perfil ao iniciar
 window.onload = function() {
-    const username = generateUsername();
-    document.getElementById("username").value = username; // Define o valor do campo de nome de usuário
-    document.getElementById("displayUsername").innerText = username; // Exibe o nome de usuário
+    loadProfile();
 };
 
-// Função para visualizar a imagem carregada
-function previewImage(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+// Função para salvar o perfil
+document.getElementById('saveButton').onclick = function() {
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const bio = document.getElementById('bio').value;
+    const photo = document.getElementById('photoPreview').src;
 
-    reader.onload = function() {
-        const imgPreview = document.getElementById("photoPreview");
-        imgPreview.src = reader.result;
-        imgPreview.style.display = 'block'; // Exibe a imagem
-        document.getElementById("displayPhoto").src = reader.result; // Exibe a imagem no perfil
-    }
+    localStorage.setItem('username', username);
+    localStorage.setItem('email', email);
+    localStorage.setItem('bio', bio);
+    localStorage.setItem('photo', photo);
 
-    if (file) {
-        reader.readAsDataURL(file); // Lê a imagem como URL
+    displayProfile();
+};
+
+// Função para exibir o perfil salvo
+function displayProfile() {
+    document.getElementById('displayUsername').innerText = localStorage.getItem('username');
+    document.getElementById('displayEmail').innerText = localStorage.getItem('email');
+    document.getElementById('displayBio').innerText = localStorage.getItem('bio');
+    document.getElementById('displayPhoto').src = localStorage.getItem('photo');
+    document.getElementById('profileDisplay').style.display = 'block'; // Exibe as informações
+}
+
+// Função para carregar os dados do perfil
+function loadProfile() {
+    if (localStorage.getItem('username')) {
+        displayProfile();
+        document.getElementById('username').value = localStorage.getItem('username');
+        document.getElementById('email').value = localStorage.getItem('email');
+        document.getElementById('bio').value = localStorage.getItem('bio');
+        document.getElementById('photoPreview').src = localStorage.getItem('photo');
     }
 }
 
-// Manipulação do formulário
-document.getElementById("profileForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Impede o envio do formulário
+// Função para visualizar a imagem do perfil
+function previewImage(event) {
+    const photoPreview = document.getElementById('photoPreview');
+    photoPreview.src = URL.createObjectURL(event.target.files[0]);
+}
 
-    // Obtendo os valores dos campos
-    const name = document.getElementById("name").value;
-    const bio = document.getElementById("bio").value;
+// Função para alterar a cor do cabeçalho
+function changeHeaderColor() {
+    const headerColor = document.getElementById('headerColor').value;
+    document.querySelector('.header').style.backgroundColor = headerColor;
+}
 
-    // Atualizando a visualização do perfil
-    document.getElementById("displayName").innerText = name;
-    document.getElementById("displayBio").innerText = bio;
+// Função para alterar a imagem do cabeçalho
+function changeHeaderImage() {
+    const headerImage = document.getElementById('headerImage').files[0];
+    if (headerImage) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.querySelector('.header').style.backgroundImage = `url(${e.target.result})`;
+            document.querySelector('.header').style.backgroundSize = 'cover';
+            document.querySelector('.header').style.backgroundPosition = 'center';
+        }
+        reader.readAsDataURL(headerImage);
+    }
+}
 
-    // Limpando o formulário
-    this.reset();
-});
+// Função para habilitar a edição dos campos
+document.getElementById('editButton').onclick = function() {
+    document.getElementById('username').removeAttribute('readonly');
+    document.getElementById('email').removeAttribute('readonly');
+    document.getElementById('bio').removeAttribute('readonly');
+    document.getElementById('username').focus();
+};

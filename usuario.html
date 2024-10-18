@@ -7,6 +7,7 @@
     <title>Usuário - CaspasTech</title>
     <link rel="icon" href="img/carpas-icon.png" type="image/x-icon">
     <link  rel="stylesheet" href="css/style-usuario.css">
+    <script src="js/script-user.js"></script>
 </head>
 <body>
     <header class="cabecalho-catalogo"> 
@@ -21,17 +22,17 @@
     </header>
     <main> 
 
-
-            
-            <div id="profileDisplay" class="profile-display">
-                <p><strong>Nome de Usuário:</strong> <span id="displayUsername"></span></p>
-                <p><strong>Nome:</strong> <span id="displayName"></span></p>
-                <p><strong>Descrição:</strong> <span id="displayBio"></span></p>
-                <img id="displayPhoto" src="#" alt="Foto de Perfil" class="photo-preview" />
-                <button>Editar</button>
+        <form class="form-perfil-user">
+            <div>
+                <label for="photo">Escolha uma imagem:</label>
+                <input type="file" id="photo" accept="image/*" onchange="previewImage(event)">
             </div>
+            <img id="photoPreview" src="#" alt="Prévia da Foto" class="photo-preview" style="display: none;" />
+        </form>
+    
+        
 
-        <script src="js/script-user.js"></script>
+        
     </main>
     <footer class="rodape">
         <div class="logo"> CarpasTech</div> 
