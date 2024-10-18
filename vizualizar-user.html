@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuário - CaspasTech</title>
-    <link rel="icon" href="img/carpas-icon.png" type="image/x-icon">
-    <link  rel="stylesheet" href="css/style-usuario.css">
-    <script src="js/script-user.js"></script>
+    <title>Perfil do Usuário - Visualizar</title>
+    <link  rel="stylesheet" href="css/style-vizualizar-user.css">
 </head>
 <body>
     <header class="cabecalho-catalogo"> 
@@ -20,13 +17,33 @@
             </ul>
         </nav>
     </header>
+
     <main> 
-
-       
+        <div class="container">
+            <h2>Perfil do Usuário</h2>
     
-        
-
-        
+            <div class="photo-preview">
+                <img id="photoPreview" src="#" alt="Foto de Perfil" />
+            </div>
+    
+            <div class="profile-info">
+                <p><strong>Nome:</strong> <span id="displayName"></span></p>
+                <p><strong>Descrição:</strong> <span id="displayBio"></span></p>
+            </div>
+    
+            <button onclick="editarPerfil()">Editar Perfil</button>
+        </div>
+        <script>
+            // Carrega os dados do perfil armazenados no localStorage
+            document.getElementById('displayName').textContent = localStorage.getItem('perfil_nome');
+            document.getElementById('displayBio').textContent = localStorage.getItem('perfil_bio');
+            document.getElementById('photoPreview').src = localStorage.getItem('perfil_foto');
+    
+            function editarPerfil() {
+                // Redireciona para a página de edição do perfil
+                window.location.href = "criar-usuario.html";
+            }
+        </script>
     </main>
     <footer class="rodape">
         <div class="logo"> CarpasTech</div> 
@@ -41,5 +58,7 @@
 
 
     </footer>
+    
+  
 </body>
 </html>
