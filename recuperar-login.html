@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de E-mail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 320px; /* Limita a largura máxima da caixa */
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #28a745;
+      display: none;
+      white-space: normal; /* Permite a quebra de linha */
+      word-wrap: break-word; /* Quebra o texto se ele for muito longo */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Insira seu e-mail para recuperação de acesso</h2>
+    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+    <button onclick="enviarEmail()">Enviar</button>
+    <p id="message" class="message">Foi enviado uma mensagem de recuperação de senha para seu e-mail.</p>
+  </div>
+
+  <script>
+    function enviarEmail() {
+      // Obter o valor do campo de e-mail
+      const emailInput = document.getElementById('email').value;
+
+      // Verifica se o campo de e-mail não está vazio
+      if (emailInput !== '') {
+        // Exibir mensagem de sucesso
+        const message = document.getElementById('message');
+        message.style.display = 'block';
+        message.innerText = 'Foi enviado uma mensagem de recuperação de senha para seu e-mail.';
+      } else {
+        // Exibir uma mensagem de erro se o campo estiver vazio
+        const message = document.getElementById('message');
+        message.style.display = 'block';
+        message.innerText = 'Por favor, insira um e-mail válido.';
+        message.style.color = 'red';
+      }
+    }
+  </script>
+
+</body>
+</html>
