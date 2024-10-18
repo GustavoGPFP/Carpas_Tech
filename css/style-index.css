@@ -266,3 +266,28 @@ button:hover {
     color: red;
     display: block;
 }
+.barra-busca {
+    position: relative;
+}
+
+.sugestoes {
+    background-color: #f1f1f1;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    display: none;
+    position: absolute;
+    width: 30%;
+    top: 100%; /* Faz o dropdown aparecer logo abaixo do input */
+    left: 0;
+    z-index: 1000; /* Garante que o dropdown fique sobre outros elementos */
+}
+
+.sugestoes div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sugestoes div:hover {
+    background-color: #ddd;
+}
