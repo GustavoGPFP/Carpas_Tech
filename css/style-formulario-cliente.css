@@ -66,8 +66,8 @@ header img {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    width: 300px;
+    padding: 50px;
+    width: 600px;
     margin: 100px auto; /* Centraliza verticalmente e horizontalmente */
     text-align: center;
     margin-bottom: 20%;
@@ -75,8 +75,8 @@ header img {
 
 .tela-login-form input {
     width: calc(100% - 20px); /* Ajusta a largura para considerar padding e border */
-    padding: 10px;
-    margin: 10px 0; /* Mantém apenas margens em cima e embaixo */
+    padding: 40px;
+    margin: 2px 0; /* Mantém apenas margens em cima e embaixo */
     border: 1px solid #ccc;
     border-radius: 5px;
     display: block; /* Garante que o input seja um bloco */
