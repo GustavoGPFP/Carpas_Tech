@@ -1,197 +1,177 @@
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-      
-}
-
-.overlay p {
-   
-    margin-top: -36px;
-    font-size: 200%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fdfcf5;
-}
-
-.overlay h2{
-    font-weight: 600px;
-    margin-top: 40px;
-    font-size: 300%;
-    color: #42413d;
-
-}
-
-.overlay {
-
-    margin-left: 100px;
-}
-
-.overlay .h23 {
-    margin-top: -30px;
-}
-
-.cabecalho-usuario {
-    background-color: #9fb2c8;
-    height: 1000px; /* Altura do cabeçalho */
-    position: relative; /* Para posicionar a imagem dentro */
-    overflow: hidden; /* Esconde a parte da imagem que sai do cabeçalho */
-}
-
-.cabecalho-usuario img {
- 
-    position: absolute;
-    bottom: 0px; /* Posiciona a imagem na parte inferior */
-    left: 90%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta a centralização */
-    opacity: 0.7; 
-    width: 100%;
-    height: auto;
-   
-}
-
-
-
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #42413d;
-    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima da tela */
 }
 
 .container-form {
-    position: absolute; /* Para sobrepor outros elementos */
-    top: 0; /* Fixa o contêiner no topo */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta o contêiner ao centro */
-    margin-top: 12%;
-    margin-left: -30%;
-    padding: 13px; /* Adiciona um espaçamento interno */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px; /* Largura máxima */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.475); /* Sombra para destaque */
+    flex-grow: 1; /* Faz o conteúdo crescer para ocupar o espaço */
+}
+
+/* Estilo para a imagem de cabeçalho e a sobreposição */
+.cabecalho-usuario {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #f4f4f4;
+}
+
+.cabecalho-usuario img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparência no fundo */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinha os itens à esquerda */
-    width: 30%; /* Ajusta a largura do contêiner */
-    border-radius: 10px;
-    background-color: white; /* Adiciona uma cor de fundo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    z-index: 999; /* Coloca o contêiner acima de outros elementos */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
 }
 
+.overlay h2 {
+    font-size: 2em;
+    margin: 0;
+}
 
+.overlay p {
+    margin: 5px 0;
+}
 
-label, legend{
+/* Formulário */
+.margem {
+    margin-bottom: 20px;
+}
+
+.margem label {
     font-weight: bold;
-    margin-left: -2%;
-    font-size: 23px;
 }
 
-legend {
-    margin-left: -5%;
-}
-fieldset {
-    border: #ffffff00;
-
+main {
+    margin-bottom: 20%;
 }
 
-.organizar-fieldset {
-    font-weight:lighter;
-    
-}
-
-fieldset  label{
-    margin-left: -6px;
-    margin-top: 2%;
-    font-weight: normal; 
-    font-size: 16px;
-
-}
-
-.input-costumizacao {
-    margin-left: -9%;
-}
-
-.input-text{
-    width: 500px;
-    border-radius: 5px; 
-    margin-left: -5%;
-    margin-top: 1.5%;
-
-
+.input-text,
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 textarea {
-    width: 500px;
-    border-radius: 5px; 
-    margin-left: -5%;
-    margin-top: 1.5%;
-    border-width: 2px;
-
+    resize: none; /* Desabilita o redimensionamento */
 }
- .input-botao, button {
-    width: auto;
-    height: auto;
-    padding: 10px;
+
+.input-costumizacao {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 10px;
+}
+
+.input-costumizacao label {
+    margin-left: 5px;
+}
+
+/* Botões */
+.input-botao {
+    width: 100%;
+    padding: 12px;
     background-color: #066ece;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 130%;
-    align-self: flex-end; /* Posiciona o botão à direita */
-  
-}
-
-button, .input-botao:hover {
-    background-color: #5eb3f0;
-
-}
-
-
-
-.margem {
-    margin-top: 30px;
-}
-
-
-
-.rodape{
-    background-color: #191B40; 
-    color: rgb(255, 255, 255); 
-    padding: 20px; 
-    width: 100%; 
-    position: relative; 
-    bottom: 0; 
+    font-size: 1.2em;
     text-align: center;
-    bottom: 0;
+}
+
+.input-botao:hover {
+    background-color: #0556a3;
+}
+
+button {
+    background-color: #d3d3d3;
+    color: black;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+button:hover {
+    background-color: #bbb;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #191B40;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: relative;
     left: 0;
     right: 0;
     
+    margin-top: 20%; /* Garante que o rodapé fique no final */
 }
 
 .rodape .logo {
     font-size: 300%;
 }
 
+.rodape .verificacao {
+    font-size: 12px;
+    color: white;
+}
+
 address {
     text-align: center;
     color: #ffffff;
 }
-.rodape .verificacao {
-    font-size: 12px; 
-    color: white ;
-}
+
 .container-logos {
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px; 
+    padding: 20px;
 }
 
 .redes-sociais {
-    max-width: 50px; 
-    height: auto; 
+    max-width: 50px;
+    height: auto;
 }
 
 footer .logo {
     color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-form {
+        width: 90%; /* Ajusta a largura em telas pequenas */
+    }
 }
