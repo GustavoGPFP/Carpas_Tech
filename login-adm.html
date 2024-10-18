@@ -17,13 +17,12 @@
     <div class="uni-img-login">
         <img src="img/imglogin.png" alt="imagem de login" class="imglogin"> 
         <!-- <form onchange="validateForm()" action="/submit" method="POST"></form> -->
-        <form action="criacao-produto.html" method="GET">
+        <form>
             <div class="tela-login">
-                <h1>Login</h1><br>
-                <input type="email" id="email" name="email" onchange="validateEmail()" placeholder="example@gmail.com">
+                <h1>Login ADM</h1><br>
+                <input type="text" id="nome" name="nome" placeholder="nome do administrador">
                 <input type="password" id="senha" name="senha" onchange="validarSenha()" placeholder="senha"><br>
-                <button type="submit" id="recuperarBtn" disabled>Recuperar Senha</button><br><br>
-                <a href="criacao-produto.html"><button type="submit" id="submitBtn" disabled>Entrar</button></a><br>
+                <button type="submit" id="submitBtn" disabled>Entrar</button><br>
                 <span id="emailError" class="error"></span>
                 <span id="senhaError" class="error"></span>
             </div>
