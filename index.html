@@ -15,7 +15,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html" target="blank">Sobre</a></li>
-                <li><a href="login-principal.html" target="blank">Usuário</a></li>
+                <li><a href="login-cadastro.html" target="blank">Usuário</a></li>
             </ul>
          
         </nav>
@@ -29,7 +29,8 @@
         <div class="inicio-titulo"> 
             <div class="barra-busca">
                 <img src="img/buscador.png" alt="Buscar" class="icone-busca"> 
-                <input type="text" id="buscador" placeholder="Buscar...">
+                <input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarPaginas()"><br><br>
+                <div id="sugestoes" class="sugestoes"></div>
             </div>
             <div class="catalogo" id="catalogo">
             </div>
@@ -69,5 +70,47 @@
 
 
     </footer>
+<script>
+    const paginas = [
+    { nome: "home", link: "index.html" },
+    { nome: "Sobre Nós", link: "sobre.html" },
+    { nome: "Catalogo", link: "catalogo-produto.html" },
+    { nome: "Login", link: "login-cadastro.html" }
+];
+
+function buscarPaginas() {
+    const input = document.getElementById('buscador').value.toLowerCase();
+    const sugestoes = document.getElementById('sugestoes');
+    
+    // Limpa sugestões anteriores
+    sugestoes.innerHTML = '';
+
+    if (input.length > 0) {
+        // Filtra as páginas que correspondem ao texto digitado
+        const resultados = paginas.filter(pagina => 
+            pagina.nome.toLowerCase().includes(input)
+        );
+
+        // Exibe sugestões
+        if (resultados.length > 0) {
+            sugestoes.style.display = 'block';
+            resultados.forEach(pagina => {
+                const div = document.createElement('div');
+                div.textContent = pagina.nome;
+                div.onclick = () => abrirPagina(pagina.link);
+                sugestoes.appendChild(div);
+            });
+        } else {
+            sugestoes.style.display = 'none';
+        }
+    } else {
+        sugestoes.style.display = 'none';
+    }
+}
+
+function abrirPagina(link) {
+    window.location.href = link;
+}
+</script>
 </body>
 </html>
