@@ -31,8 +31,8 @@ body {
 }
 
 .cabecalho-usuario {
-    background-color: #b5bcc4;
-    height: 600px; /* Altura do cabeçalho */
+    background-color: #9fb2c8;
+    height: 1000px; /* Altura do cabeçalho */
     position: relative; /* Para posicionar a imagem dentro */
     overflow: hidden; /* Esconde a parte da imagem que sai do cabeçalho */
 }
@@ -58,84 +58,25 @@ body {
     
 }
 
-.nav-user {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.021); /* Fundo transparente */
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-
-
-.nav-links a {
-    color: #ffffff; /* Cor padrão do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    display: inline-block; /* Permite definir largura e altura */
-    width: 70px; /* Largura fixa */
-    height: auto; /* Altura fixa */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 25px; /* Bordas arredondadas */
-    text-align: center; /* Centraliza o texto */
-    line-height: 30px; /* Alinha verticalmente o texto */
-    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Transição suave */
-}
-
-.nav-links a:hover {
-    color: #000000; /* Cor do texto ao passar o mouse */
-    background-color: #e6e9f0be; /* Cor de fundo ao passar o mouse */
-    border: 2px solid black; /* Borda preta ao passar o mouse */
-}
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.9);
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-}
-
 .container-form {
-    margin-top: 0.2%;
-    margin-left: 40%;
-    margin-right: 30%;
-    margin-bottom: 10px;
+    position: absolute; /* Para sobrepor outros elementos */
+    top: 0; /* Fixa o contêiner no topo */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o contêiner ao centro */
+    margin-top: 12%;
+    margin-left: -30%;
+    padding: 13px; /* Adiciona um espaçamento interno */
     display: flex;
     flex-direction: column;
-    max-width: 100%;
+    align-items: center; /* Alinha os itens à esquerda */
+    width: 30%; /* Ajusta a largura do contêiner */
     border-radius: 10px;
+    background-color: white; /* Adiciona uma cor de fundo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    z-index: 999; /* Coloca o contêiner acima de outros elementos */
 }
+
+
 
 label, legend{
     font-weight: bold;
@@ -185,19 +126,22 @@ textarea {
     border-width: 2px;
 
 }
-.input-botao {
-    color: #fffafa;
-    background-color: #010d2c;
-    opacity: 0.7;
-    border: #000000;
-    font-size: 17px;
+ .input-botao, button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #066ece;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 10px;
+    font-size: 130%;
+    align-self: flex-end; /* Posiciona o botão à direita */
+  
 }
 
-.input-botao:hover {
-    color: #000000;
-    background-color: #d5e1ff;
+button, .input-botao:hover {
+    background-color: #5eb3f0;
 
 }
 

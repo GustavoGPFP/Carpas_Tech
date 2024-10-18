@@ -174,12 +174,14 @@ img {
 .name-user {
     font-size: 140%;
     font-weight: bold;
-    text-decoration: underline;
+    font-style: italic;
 }
 
 main h2 {
     text-align: center;
-    background-color: #007bffca;
+    color: #007bffca;
+    font-size: 200%;
+  
 }
 
 button {
@@ -189,6 +191,7 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 150%;
 }
 
 button:hover {
