@@ -139,3 +139,20 @@ address {
     width: 40%;
     height: auto;
 }
+#alink {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* cor do botão */
+    color: white; /* cor do texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Efeito de hover para parecer mais um botão */
+#alink:hover {
+    background-color: #45a049;
+}
