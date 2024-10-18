@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download de Arquivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+        #downloadLink {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #downloadLink:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conteúdo</h1>
+    <p>Neste link você encontrara o conteúdo que você precisa</p>
+    <a id="downloadLink" href="catalogo-produto.html" download>Baixar Arquivo</a>
+
+    <script>
+        document.getElementById('downloadLink').addEventListener('click', function(event) {
+            // Lógica adicional, se necessário
+        });
+    </script>
+</body>
+</html>
